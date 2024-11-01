@@ -17,6 +17,7 @@ public class Controller {
     private MyPanel panel;
     private Point2D firstPoint;
     private Point2D secondPoint;
+    public static Controller instance;
     public Controller() {
         model = new Model();
         MyShape shape = new MyShape(new Rectangle2D.Double());
@@ -29,6 +30,12 @@ public class Controller {
 
         frame = new MyFrame();
         frame.setPanel(panel);
+    }
+    public static Controller getInstance(){
+        if (instance == null){
+            instance = new Controller();
+        }
+        return instance;
     }
     public void getPointOne(Point2D p){
         firstPoint = p;
