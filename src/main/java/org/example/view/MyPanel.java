@@ -1,6 +1,7 @@
 package org.example.view;
 
 import org.example.controller.Controller;
+import org.example.controller.action.ActionDraw;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -17,16 +18,17 @@ public class MyPanel extends JPanel implements Observer {
 
     public MyPanel(Controller controller) {
         this.controller = controller;
+
         addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent arg0) {
-                controller.getPointOne(arg0.getPoint());
+                controller.mousePressed(arg0);
             }
         });
         addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseDragged(MouseEvent arg0) {
-                controller.getPointTwo(arg0.getPoint());
+                controller.mouseDragger(arg0);
             }
         });
     }
