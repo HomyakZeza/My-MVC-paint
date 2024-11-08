@@ -8,15 +8,15 @@ import java.util.Observable;
 
 // TODO: 25.10.2024 Сделать singleton класс
 public class Model extends Observable {
-    public Object update;
     private MyShape currentShape;
-    private List<MyShape> shapeCollection = new ArrayList<>();
+    private final List<MyShape> shapeCollection = new ArrayList<>();
 
     public void setMyShape(MyShape myShape) {
         this.currentShape = myShape;
     }
 
     public void changeShape(Point2D x, Point2D y) {
+
         currentShape.setFrame(x, y);
         update();
     }

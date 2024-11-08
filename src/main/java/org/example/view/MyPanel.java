@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 
 public class MyPanel extends JPanel implements Observer {
-    private Controller controller;
+    private final Controller controller;
 
     public MyPanel(Controller controller) {
         this.controller = controller;
